@@ -431,8 +431,8 @@ print(torch.cuda.get_device_name(0))    # GPU adı yazdırmalı
 ## 📤 Output Formatı
 
 ### Çıktı Görüntüsü
+<img width="1491" height="890" alt="image" src="https://github.com/user-attachments/assets/3a7dd81f-28b0-4ade-900c-f9cffff12047" />
 
-**Dosya:** `segmentasyon_sonucu.png`
 - **Format:** RGB, PNG (lossless)
 - **Boyut:** Giriş görüntüsüyle aynı
 - **İçerik:** Orijinal görüntü + 50% saydamlı renklü maskeler
