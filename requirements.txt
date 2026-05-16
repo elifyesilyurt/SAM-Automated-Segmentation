@@ -1,29 +1,101 @@
-# ===== DEEP LEARNING FRAMEWORK =====
-torch==2.1.2
-torchvision==0.16.2
+# ============================================================================
+# SAM Automated Segmentation — Project Dependencies
+# ============================================================================
+# Production-grade requirements.txt
+# Tested with Python 3.8+, CUDA 11.8+
+# ============================================================================
 
-# ===== SAM MODEL (GitHub üzerinden doğrudan kurulum) =====
-git+https://github.com/facebookresearch/segment-anything.git
+# Core Deep Learning Framework
+# ────────────────────────────────────────────────────────────────────────
+torch>=2.0.0,<3.0.0                # PyTorch (GPU-accelerated, CUDA 11.8+)
+torchvision>=0.15.0,<1.0.0         # Computer vision utilities
+torchaudio>=2.0.0,<3.0.0           # Audio processing (optional)
 
-# ===== VİDEO VE GÖRÜNTÜ İŞLEME =====
-# Lokal geliştirme için opencv-python, sadece sunucu/colab için opencv-python-headless seçilmelidir.
-opencv-python-headless==4.8.1.78
-Pillow==10.1.0
-pycocotools==2.0.7
+# Segment Anything Model (Meta)
+# ────────────────────────────────────────────────────────────────────────
+# Install from git repository for latest version:
+# git+https://github.com/facebookresearch/segment-anything.git
 
-# ===== VERİ İŞLEME VE GÖRÜSÜN =====
-numpy==1.24.3
-scipy==1.11.4
-supervision==0.16.0
+# Annotation & Visualization
+# ────────────────────────────────────────────────────────────────────────
+supervision>=0.20.0,<1.0.0         # Mask visualization & detection tools
+pycocotools>=2.0.6                 # COCO dataset format support
 
-# ===== GÖRSELLEŞTİRME =====
-matplotlib==3.7.4
-seaborn==0.12.2
+# Image Processing
+# ────────────────────────────────────────────────────────────────────────
+opencv-python>=4.8.0,<5.0.0        # Computer vision library
+# For headless environments (Colab/servers):
+# opencv-python-headless>=4.8.0,<5.0.0
 
-# ===== JUPYTER NOTEBOOK İÇİN =====
-jupyter==1.0.0
-ipython==8.12.3
+# Numerical Computing & Data Science
+# ────────────────────────────────────────────────────────────────────────
+numpy>=1.21.0,<2.0.0               # Numerical arrays
+scipy>=1.7.0                       # Scientific computing (dependency)
 
-# ===== YARDIMCI ARAÇLAR =====
-tqdm==4.66.1
-python-dotenv==1.0.0
+# Visualization & Plotting
+# ────────────────────────────────────────────────────────────────────────
+matplotlib>=3.5.0,<4.0.0           # Plotting library
+Pillow>=9.0.0                      # Image processing
+
+# Jupyter & Interactive Development
+# ────────────────────────────────────────────────────────────────────────
+jupyter>=1.0.0                     # Jupyter notebook
+ipython>=7.30.0                    # Interactive Python
+ipywidgets>=8.0.0                  # Jupyter widgets (optional)
+
+# Utilities & Tools
+# ────────────────────────────────────────────────────────────────────────
+tqdm>=4.64.0                       # Progress bars
+python-dotenv>=0.19.0              # Environment variable management (optional)
+pyyaml>=6.0                        # YAML parsing (for config files)
+
+# ============================================================================
+# Development Dependencies (optional, for testing/linting)
+# ============================================================================
+# Uncomment if working on development version
+
+# pytest>=7.0.0                     # Unit testing framework
+# pytest-cov>=3.0.0                # Code coverage
+# black>=22.0.0                    # Code formatter
+# flake8>=4.0.0                    # Linter
+# mypy>=0.950                      # Static type checker
+# pylint>=2.13.0                   # Code analysis
+
+# ============================================================================
+# Installation Instructions
+# ============================================================================
+# 
+# 1. Basic Installation (CPU):
+#    $ pip install -r requirements.txt
+#
+# 2. Installation with GPU Support (CUDA 11.8):
+#    $ pip install torch torchvision torchaudio \
+#      --index-url https://download.pytorch.org/whl/cu118
+#    $ pip install -r requirements.txt
+#
+# 3. GPU Support (CUDA 12.1):
+#    $ pip install torch torchvision torchaudio \
+#      --index-url https://download.pytorch.org/whl/cu121
+#    $ pip install -r requirements.txt
+#
+# 4. Apple Silicon (M1/M2/M3):
+#    $ pip install -r requirements.txt
+#    (PyTorch automatically uses Metal Acceleration)
+#
+# 5. Installation from Git (Latest SAM):
+#    $ pip install git+https://github.com/facebookresearch/segment-anything.git
+#
+# 6. Headless Environment (Colab/Servers):
+#    Replace "opencv-python" with "opencv-python-headless"
+#
+# ============================================================================
+# Verification
+# ============================================================================
+# 
+# After installation, verify setup:
+#
+#   python -c "import torch; print(f'PyTorch: {torch.__version__}')"
+#   python -c "import torch; print(f'CUDA Available: {torch.cuda.is_available()}')"
+#   python -c "from segment_anything import sam_model_registry; print('SAM OK')"
+#
+# ============================================================================
