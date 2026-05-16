@@ -1,0 +1,69 @@
+# ==========================================
+# 1. PYTHON VE SANAL ORTAMLAR (VIRTUAL ENVS)
+# ==========================================
+# Python'ın derlenmiş bytecode dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Sanal ortam klasörleri (Hangi ismi kullandıysanız engeller)
+.venv/
+venv/
+env/
+ENV/
+dist/
+build/
+*.egg-info/
+
+# ==========================================
+# 2. YAPAY ZEKA VE SAM MODEL AĞIRLIKLARI (CRITICAL)
+# ==========================================
+# SAM .pth model ağırlıkları çok büyüktür, kesinlikle Git'e yüklenmemelidir
+*.pth
+*.pt
+*.onnx
+*.pkl
+*.pb
+
+# Eğer model ağırlıklarını tek bir klasörde topluyorsanız:
+models/
+weights/
+
+# ==========================================
+# 3. VERİ SETLERİ VE SONUÇLAR (DATASET & RESULTS)
+# ==========================================
+# Voleybol videoları, kaynak görseller ve çıktı (output) klasörleri
+data/
+datasets/
+inputs/
+outputs/
+results/
+*.mp4
+*.avi
+*.mov
+*.jpg
+*.jpeg
+*.png
+
+# ==========================================
+# 4. JUPYTER NOTEBOOK VE IDE AYARLARI
+# ==========================================
+# Jupyter'in otomatik oluşturduğu geçici checkpoint klasörleri
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# IDE (VS Code, PyCharm vb.) özel ayarları
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# ==========================================
+# 5. GÜVENLİK VE AYARLAR (ENVIRONMENT)
+# ==========================================
+# Gizli anahtarlar veya lokal değişkenler (python-dotenv için)
+.env
+.env.local
