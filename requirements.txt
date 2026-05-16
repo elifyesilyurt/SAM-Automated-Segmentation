@@ -1,0 +1,29 @@
+# ===== DEEP LEARNING FRAMEWORK =====
+torch==2.1.2
+torchvision==0.16.2
+
+# ===== SAM MODEL (GitHub üzerinden doğrudan kurulum) =====
+git+https://github.com/facebookresearch/segment-anything.git
+
+# ===== VİDEO VE GÖRÜNTÜ İŞLEME =====
+# Lokal geliştirme için opencv-python, sadece sunucu/colab için opencv-python-headless seçilmelidir.
+opencv-python-headless==4.8.1.78
+Pillow==10.1.0
+pycocotools==2.0.7
+
+# ===== VERİ İŞLEME VE GÖRÜSÜN =====
+numpy==1.24.3
+scipy==1.11.4
+supervision==0.16.0
+
+# ===== GÖRSELLEŞTİRME =====
+matplotlib==3.7.4
+seaborn==0.12.2
+
+# ===== JUPYTER NOTEBOOK İÇİN =====
+jupyter==1.0.0
+ipython==8.12.3
+
+# ===== YARDIMCI ARAÇLAR =====
+tqdm==4.66.1
+python-dotenv==1.0.0
